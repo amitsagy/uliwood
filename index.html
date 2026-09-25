@@ -210,8 +210,9 @@ section{position:relative}
 
 /* process: oak band with parallax grain */
 .process{position:relative;overflow:hidden;background:var(--walnut);color:var(--chalk)}
-.grain{position:absolute;inset:-25% 0;background:url(img/oak-1600.webp) center/cover;opacity:.16;mix-blend-mode:screen;will-change:transform}
+.grain{position:absolute;inset:-25% 0;background:center/cover;opacity:.16;mix-blend-mode:screen;will-change:transform}
 .process .wrap{position:relative}
+.process.near .grain{background-image:url(img/oak-1600.webp)}
 .process .kicker{color:var(--honey)}
 .steps{list-style:none;margin:clamp(44px,6vw,80px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(247,242,234,.18)}
 .steps li{padding:34px clamp(18px,2.4vw,36px) 0;border-inline-start:1px solid rgba(247,242,234,.18)}
@@ -334,7 +335,7 @@ section{position:relative}
 <section class="hero" id="top" data-parallax aria-label="אוליווד רהיטים">
   <div class="hero-media" data-depth="-0.38">
     <img src="img/hero-poster-1920.webp" srcset="img/hero-poster-960.webp 960w, img/hero-poster-1920.webp 1920w" sizes="100vw" alt="" fetchpriority="high" width="1920" height="1080">
-    <video id="heroVideo" autoplay muted loop playsinline disablepictureinpicture preload="none" poster="img/hero-poster-1920.webp" aria-hidden="true" tabindex="-1" data-src-lg="video/hero-1080.mp4" data-src-sm="video/hero-720.mp4"></video>
+    <video id="heroVideo" autoplay muted loop playsinline disablepictureinpicture preload="none" poster="img/hero-poster-960.webp" aria-hidden="true" tabindex="-1" data-src-lg="video/hero-1080.mp4" data-src-sm="video/hero-720.mp4"></video>
   </div>
   <div class="hero-shade"></div>
   <div class="hero-rails" data-depth="-0.16" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -564,6 +565,9 @@ section{position:relative}
   const vid = document.getElementById('heroVideo');
   const toggle = document.getElementById('vidToggle');
   let userPaused = false;
+  const posterImg = document.querySelector('.hero-media img');
+  const syncPoster = () => { if (posterImg.currentSrc) vid.poster = posterImg.currentSrc; };
+  posterImg.complete ? syncPoster() : posterImg.addEventListener('load', syncPoster, { once: true });
   function startVideo(){
     if (reduce.matches || userPaused) return;
     if (!vid.src) {
@@ -603,7 +607,7 @@ section{position:relative}
     host, layers: [...host.querySelectorAll('[data-depth]')].map(el => ({ el, d: parseFloat(el.dataset.depth), fade: el.hasAttribute('data-fade') })),
     on: false
   }));
-  const io = new IntersectionObserver(entries => { entries.forEach(e => { const h = hosts.find(x => x.host === e.target); if (h) h.on = e.isIntersecting; }); req(); }, { rootMargin: '20% 0px' });
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { const h = hosts.find(x => x.host === e.target); if (h) h.on = e.isIntersecting; if (e.isIntersecting) e.target.classList.add('near'); }); req(); }, { rootMargin: '20% 0px' });
   hosts.forEach(h => io.observe(h.host));
   let ticking = false;
   function frame(){
