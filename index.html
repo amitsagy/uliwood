@@ -26,7 +26,8 @@
 <link rel="preload" as="image" href="img/hero-poster-1920.webp" imagesrcset="img/hero-poster-960.webp 960w, img/hero-poster-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 
 <script type="application/ld+json">
 {
@@ -58,7 +59,7 @@
 
 <style>
 :root{
-  --walnut:#231b14; --walnut-2:#33271d; --oak:#c8915a; --oak-deep:#a4703f; --honey:#e2b57f;
+  --walnut:#231b14; --walnut-2:#33271d; --oak:#c8915a; --oak-deep:#86572c; --honey:#e2b57f;
   --chalk:#f7f2ea; --linen:#efe6d8; --sand:#ddcdb6; --sage:#7f8f72; --ink:#231b14; --muted:#6d5f51;
   --line:rgba(35,27,20,.14);
   --serif:"Frank Ruhl Libre",Georgia,serif; --sans:"Assistant",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
@@ -239,7 +240,8 @@ section{position:relative}
 .q:first-child figcaption{color:rgba(247,242,234,.7)}
 .q figcaption b{color:inherit;font-weight:700}
 .q:first-child figcaption b{color:var(--chalk)}
-.q .stars{font-size:13px;color:var(--oak)}
+.q .stars{font-size:14px;color:var(--oak-deep)}
+.q:first-child .stars{color:var(--honey)}
 @media (max-width:980px){.quotes{grid-template-columns:1fr}}
 .rev-src{margin-top:22px;font-size:14px;color:var(--muted)}
 .rev-src a{color:var(--oak-deep)}
@@ -313,7 +315,7 @@ section{position:relative}
 
 <header class="hdr" id="hdr">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="אוליווד רהיטים, לראש העמוד">
+    <a class="logo" href="#top" aria-label="אוליווד Uliwood, לראש העמוד">
       <svg aria-hidden="true"><use href="#mark"/></svg>
       <span><b>אוליווד</b><small>Uliwood</small></span>
     </a>
@@ -344,7 +346,7 @@ section{position:relative}
     <div class="wrap">
       <p class="eyebrow fade-in">מפעל רהיטים · קריית ביאליק · מאז 1995</p>
       <h1><span class="ln"><span>רהיטים שנבנים</span></span><span class="ln"><span>למידות <em>של הבית</em></span></span></h1>
-      <p class="hero-sub fade-in d1">ארונות, חדרי שינה, חדרי ילדים ונוער וספריות, בעיצוב אישי. מתוכננים ומיוצרים אצלנו במפעל ומגיעים אליכם בלי מתווכים.</p>
+      <p class="hero-sub">ארונות, חדרי שינה, חדרי ילדים ונוער וספריות, בעיצוב אישי. מתוכננים ומיוצרים אצלנו במפעל ומגיעים אליכם בלי מתווכים.</p>
       <div class="hero-cta fade-in d2">
         <a class="btn btn-solid" href="tel:+972778041480"><svg aria-hidden="true"><use href="#i-phone"/></svg>חייגו <span class="ltr">077-804-1480</span></a>
         <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=%D7%90%D7%95%D7%9C%D7%99%D7%95%D7%95%D7%93%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D%2C%20%D7%94%D7%97%D7%A8%D7%95%D7%A9%D7%AA%2047%2C%20%D7%A7%D7%A8%D7%99%D7%99%D7%AA%20%D7%91%D7%99%D7%90%D7%9C%D7%99%D7%A7" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-nav"/></svg>ניווט לאולם התצוגה</a>
@@ -382,7 +384,7 @@ section{position:relative}
     </div>
     <div class="collage" data-parallax>
       <div class="layer back door" data-depth="0.06"><img src="img/workshop-800.webp" srcset="img/workshop-800.webp 800w, img/workshop-1400.webp 1400w" sizes="(max-width:900px) 90vw, 45vw" alt="מכונת חיתוך ממוחשבת חותכת לוח פורניר אלון במפעל" loading="lazy" width="1400" height="933"></div>
-      <div class="layer mid door" data-depth="-0.1"><img src="img/drawer-800.webp" alt="מגירה מפורניר אלון נפתחת על מסילה עם טריקה שקטה" loading="lazy" width="800" height="800"></div>
+      <div class="layer mid door" data-depth="-0.1"><img src="img/drawer-800.webp" srcset="img/drawer-420.webp 420w, img/drawer-800.webp 800w" sizes="(max-width:900px) 48vw, 24vw" alt="מגירה מפורניר אלון נפתחת על מסילה עם טריקה שקטה" loading="lazy" width="800" height="800"></div>
       <div class="layer front" data-depth="-0.22"><div class="rise"><b>1995</b><span>מאז שנה זו אנחנו מייצרים רהיטים בקריית ביאליק</span></div></div>
     </div>
   </div>
@@ -399,19 +401,19 @@ section{position:relative}
     </div>
     <div class="cards">
       <article class="card">
-        <div class="door"><img src="img/closets-560.webp" srcset="img/closets-560.webp 560w, img/closets-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="ארון הזזה מאלון ולבן עם מדפים ומוט תלייה" loading="lazy" width="900" height="1125"></div>
+        <div class="door"><img src="img/closets-560.webp" srcset="img/closets-380.webp 380w, img/closets-560.webp 560w, img/closets-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="ארון הזזה מאלון ולבן עם מדפים ומוט תלייה" loading="lazy" width="900" height="1125"></div>
         <div class="rise"><span class="num">01</span><h3>ארונות</h3><p>ארונות הזזה של 2 ו-3 דלתות ברוחבים של 120 עד 270 ס״מ, וארונות פתיחה.</p></div>
       </article>
       <article class="card">
-        <div class="door"><img src="img/bedroom-560.webp" srcset="img/bedroom-560.webp 560w, img/bedroom-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="חדר שינה עם מיטה ושידות לילה מפורניר אלון" loading="lazy" width="900" height="1125"></div>
+        <div class="door"><img src="img/bedroom-560.webp" srcset="img/bedroom-380.webp 380w, img/bedroom-560.webp 560w, img/bedroom-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="חדר שינה עם מיטה ושידות לילה מפורניר אלון" loading="lazy" width="900" height="1125"></div>
         <div class="rise"><span class="num">02</span><h3>חדרי שינה</h3><p>חדרי שינה מלאים, כולל חדרי שינה יהודיים עם ארון.</p></div>
       </article>
       <article class="card">
-        <div class="door"><img src="img/kids-560.webp" srcset="img/kids-560.webp 560w, img/kids-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="חדר ילדים עם מיטת גלריה, שולחן כתיבה וארון" loading="lazy" width="900" height="1125"></div>
+        <div class="door"><img src="img/kids-560.webp" srcset="img/kids-380.webp 380w, img/kids-560.webp 560w, img/kids-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="חדר ילדים עם מיטת גלריה, שולחן כתיבה וארון" loading="lazy" width="900" height="1125"></div>
         <div class="rise"><span class="num">03</span><h3>חדרי ילדים ונוער</h3><p>מיטות קומותיים, שולחנות כתיבה וארונות שמתוכננים לחדר ולילד.</p></div>
       </article>
       <article class="card">
-        <div class="door"><img src="img/library-560.webp" srcset="img/library-560.webp 560w, img/library-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="ספרייה מקיר לקיר מאלון עם ארונות סגורים בתחתית" loading="lazy" width="900" height="1125"></div>
+        <div class="door"><img src="img/library-560.webp" srcset="img/library-380.webp 380w, img/library-560.webp 560w, img/library-900.webp 900w" sizes="(max-width:1000px) 46vw, 23vw" alt="ספרייה מקיר לקיר מאלון עם ארונות סגורים בתחתית" loading="lazy" width="900" height="1125"></div>
         <div class="rise"><span class="num">04</span><h3>ספריות</h3><p>ספריות לסלון ולחדר העבודה, וספריות קודש.</p></div>
       </article>
     </div>
@@ -513,7 +515,7 @@ section{position:relative}
     </div>
     <div class="foot-grid">
       <div>
-        <a class="logo" href="#top" aria-label="אוליווד רהיטים, לראש העמוד"><svg aria-hidden="true"><use href="#mark"/></svg><span><b>אוליווד</b><small>Uliwood</small></span></a>
+        <a class="logo" href="#top" aria-label="אוליווד Uliwood, לראש העמוד"><svg aria-hidden="true"><use href="#mark"/></svg><span><b>אוליווד</b><small>Uliwood</small></span></a>
         <p>מפעל רהיטים בהתאמה אישית בקריית ביאליק, מאז 1995. משלוחים לכל חלקי הארץ.</p>
       </div>
       <div>
@@ -592,7 +594,7 @@ section{position:relative}
   const hdr = document.getElementById('hdr'), mbar = document.getElementById('mbar');
   const onScrollUi = () => {
     const y = scrollY, h = innerHeight;
-    hdr.classList.toggle('solid', y > h * 0.75);
+    hdr.classList.toggle('solid', y > h * 0.12);
     mbar.classList.toggle('show', y > h * 0.6);
   };
 
@@ -609,9 +611,8 @@ section{position:relative}
     onScrollUi();
     if (reduce.matches) return;
     const vh = innerHeight;
-    for (const h of hosts) {
-      if (!h.on) continue;
-      const r = h.host.getBoundingClientRect();
+    const live = hosts.filter(h => h.on).map(h => [h, h.host.getBoundingClientRect()]);
+    for (const [h, r] of live) {
       const off = (r.top + r.height / 2) - vh / 2;
       for (const l of h.layers) {
         l.el.style.transform = `translate3d(0,${(off * l.d).toFixed(2)}px,0)`;
